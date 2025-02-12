@@ -120,10 +120,12 @@
         <audio autoplay loop">
             <source src="https://drive.google.com/file/d/1VCZ3Jq9rsopeUHMHHOeWMiOiKOF2sESy/view?usp=sharing" type="audio/mp3">
         </audio>
-        -->
+
         <button onclick="document.getElementById('bg-music').play()">Play Music</button>
         <audio id="bg-music" controls>
           <source src="https://drive.google.com/uc?export=download&id=1VCZ3Jq9rsopeU
+        -->
+        
 
     </div>
 
@@ -133,10 +135,6 @@
             document.getElementById("question" + (current + 1)).style.display = "block";
         }
 
-            
-        window.onload = function() {
-        document.getElementById("soundcloudPlayer").src += "&auto_play=true";
-          }
 
         function showMessage() {
             document.getElementById("question5").style.display = "none";
@@ -148,6 +146,10 @@
 
         function wrongAnswer() {
             alert("Oops! Try again. 😘");
+        }
+        
+        window.onload = function() {
+            document.getElementById("soundcloudPlayer").src += "&auto_play=true";
         }
     </script>
 
