@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trivia 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffebee;
+        }
+        .container {
+            margin-top: 50px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color: #e91e63;
+        }
+        .question {
+            display: none;
+        }
+        .btn {
+            padding: 10px 15px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .correct {
+            background-color:rgb(9, 198, 9);
+            color: white;
+        }
+        .wrong {
+            background-color: #f44336;
+            color: white;
+        }
+        #message {
+            display: none;
+            font-size: 22px;
+            margin-top: 20px;
+            color: #d50000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Please answer the questions 💘</h1>
+
+         <!-- Question 1 -->
+        <div id="question1" class="question" style="display:block;">
+            <p><b>What movie we going to watch? 🤔</b></p>
+            <button class="btn wrong" onclick="wrongAnswer()">Lion King 🦁</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Love Hurts 💔</button>
+            <button class="btn correct" onclick="nextQuestion(1)">Captain America 🇺🇸</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Madea 🧑🏿‍🦳</button>
+        </div>
+
+        <!-- Question 2 -->
+        <div id="question2" class="question" >
+            <p><b>What's my favorite thing about you? 🤔</b></p>
+            <button class="btn wrong" onclick="wrongAnswer()">Your looks 👸🏽</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Your cooking 🍛</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Your smartness 👩🏿‍💻</button>
+            <button class="btn correct" onclick="nextQuestion(2)">Everything! 😍</button>
+        </div>
+
+        
+
+        <!-- Question 3 -->
+        <div id="question3" class="question">
+            <p><b>Where was our first date? 💕</b></p>
+            <button class="btn wrong" onclick="wrongAnswer()">Picnic at the park 🌳 </button>
+            <button class="btn correct" onclick="nextQuestion(3)">Movie Night 🎬</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Bowling 🎳</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Dinner date 🍽️</button>
+        </div>
+
+        <!-- Question 4 -->
+        <div id="question4" class="question">
+            <p><b>What is on the schedule? 🥹</b></p>
+            <button class="btn correct" onclick="nextQuestion(4)">Massage at home 💆🏿‍♀️</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Listening to music 🎶</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Gym 🏋🏿‍♀️</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Swimming 🏊🏿‍♀️</button>
+        </div>
+
+        <!-- Question 3 -->
+        <div id="question5" class="question">
+            <p><b>If I could spend forever with someone, who would it be? 🥹</b></p>
+            <button class="btn wrong" onclick="wrongAnswer()">Beyonce 🎶</button>
+            <button class="btn wrong" onclick="wrongAnswer()">My PlayStation 🎮</button>
+            <button class="btn correct" onclick="showMessage()">You, of course! 😘</button>
+            <button class="btn wrong" onclick="wrongAnswer()">Snow 🐕</button>
+        </div>
+
+        <!-- Final Message -->
+        <p id="message">🎉 Yay! You got them all right! <br> <b>Will you be my Valentine? ❤️‍🔥❤️💝</b></p>
+
+        <!-- Hidden Audio (Background Music) -->
+        <audio id="valentineMusic">
+            <source src="Lè-Mwen-Wèw.mp3" type="audio/mpeg">
+        </audio>
+
+
+    </div>
+
+    <script>
+        function nextQuestion(current) {
+            document.getElementById("question" + current).style.display = "none";
+            document.getElementById("question" + (current + 1)).style.display = "block";
+        }
+
+        function showMessage() {
+            document.getElementById("question5").style.display = "none";
+            document.getElementById("message").style.display = "block";
+
+            // Play the music when the final message appears
+            document.getElementById("valentineMusic").play();
+        }
+
+        function wrongAnswer() {
+            alert("Oops! Try again. 😘");
+        }
+    </script>
+
+</body>
+</html>
